@@ -1,7 +1,15 @@
-function App() {
+// Arquivos com extenção ".jsx" contém código Javascript + HTML5;
+
+import { Post } from './Post';
+
+export function App() {
   return (
-    <h1>Hello World</h1>
+    // Multiplos componentes precisam de uma tag (elemento html) em volta;
+    <>
+      <Post />
+      <Post />
+      <Post />
+      <Post />
+    </>
   )
 }
-
-export default App

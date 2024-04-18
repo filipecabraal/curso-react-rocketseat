@@ -1,8 +1,11 @@
 // Arquivos com extenção ".jsx" contém código Javascript + HTML5;
 
-import { Post } from './Post';
 import { Header } from './components/Header';
+import { Sidebar } from './components/Sidebar';
+import { Post } from './Post';
+
 import './global.css';
+import styles from './App.module.css';
 
 export function App() {
   return (
@@ -10,17 +13,21 @@ export function App() {
     <>
       <Header />
 
-      <Post 
-        author="Cabralzinho"
-        content="Lorem ipsum dolor, sit amet consectetur adipisicing elit."
-      />
-      <Post 
-        author="Victorinha"
-        content="Lorem ipsum dolor, sit amet consectetur adipisicing elit."
-      />
+      <div className={styles.wrapper}>
+        <Sidebar />
+        <main>
+          <Post 
+            author="Cabralzinho"
+            content="Lorem ipsum dolor, sit amet consectetur adipisicing elit."
+          />
+          <Post 
+            author="Victorinha"
+            content="Lorem ipsum dolor, sit amet consectetur adipisicing elit."
+          />
+        </main>
+      </div>
     </>
   )
 }
 
 // Lorem ipsum dolor, sit amet consectetur adipisicing elit. 
-

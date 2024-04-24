@@ -4,7 +4,7 @@ const imgUrl = "https://avatars.githubusercontent.com/u/25158348?v=4";
 const dateTime = new Date();
 
 // # Named Exports
-export function Post(props) {
+export function Post() {
     return (
         <article className={styles.post}>
             <header>
@@ -24,7 +24,7 @@ export function Post(props) {
                 <p>Eius at facere iusto odio illo? Rem asperiores veniam laborum quos suscipit quia iusto 
                 quidem consectetur dolores temporibus dolorum praesentium, aliquam quasi!</p>
                 <p><a href="https://github.com/filipecabraal">github.com/filipecabraal</a></p>
-                <p><a href="">#novoprojeto #nlw #rocketseat</a></p>
+                <p><a href="">#novoprojeto</a> <a href="">#nlw</a> <a href="">#rocketseat</a></p>
             </div>
         </article>
     )

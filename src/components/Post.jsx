@@ -1,3 +1,4 @@
+import { Comment } from './Comment';
 import styles from './Post.module.css';
 
 const imgUrl = "https://avatars.githubusercontent.com/u/25158348?v=4";
@@ -38,6 +39,11 @@ export function Post() {
                     <button type='submit'>Publicar</button>
                 </footer>
             </form>
+
+            <div className={styles.commentList}>
+                <Comment />
+                <Comment />
+            </div>
         </article>
     )
 }

@@ -1,7 +1,8 @@
-import { Comment } from './Comment';
 import styles from './Post.module.css';
+import { Comment } from './Comment';
+import { Avatar } from './Avatar';
 
-const imgUrl = "https://avatars.githubusercontent.com/u/25158348?v=4";
+const avatarImgUrl = "https://github.com/filipecabraal.png";
 const dateTime = new Date();
 
 // # Named Exports
@@ -10,7 +11,7 @@ export function Post() {
         <article className={styles.post}>
             <header>
                 <div className={styles.author}>
-                    <img className={styles.avatar} src={imgUrl} />
+                    <Avatar src={avatarImgUrl} />
                     <div className={styles.authorInfo}>
                         <strong>Filipe Cabral</strong>
                         <span>Web Developer</span>

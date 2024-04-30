@@ -4,6 +4,8 @@ import { Header } from './components/Header';
 import { Sidebar } from './components/Sidebar';
 import { Post } from './components/Post';
 
+import postsMock from './mocks/posts.json'
+
 import './global.css';
 import styles from './App.module.css';
 
@@ -16,18 +18,17 @@ export function App() {
       <div className={styles.wrapper}>
         <Sidebar />
         <main>
-          <Post 
-            author="Cabralzinho"
-            content="Lorem ipsum dolor, sit amet consectetur adipisicing elit."
-          />
-          <Post 
-            author="Victorinha"
-            content="Lorem ipsum dolor, sit amet consectetur adipisicing elit."
-          />
+          {postsMock.map(post => {
+            return (
+              <Post 
+                author={post.author}
+                content={post.content}
+                publishedAt={post.publishedAt}
+              />
+            )
+          })}
         </main>
       </div>
     </>
   )
 }
-
-// Lorem ipsum dolor, sit amet consectetur adipisicing elit. 

@@ -1,5 +1,3 @@
-// Arquivos com extenção ".jsx" contém código Javascript + HTML5;
-
 import { Header } from './components/Header';
 import { Sidebar } from './components/Sidebar';
 import { Post } from './components/Post';
@@ -11,7 +9,6 @@ import styles from './App.module.css';
 
 export function App() {
   return (
-    // Multiplos componentes precisam de uma tag (elemento html) em volta;
     <>
       <Header />
 
@@ -20,7 +17,8 @@ export function App() {
         <main>
           {postsMock.map(post => {
             return (
-              <Post 
+              <Post
+                key={post.id} 
                 author={post.author}
                 content={post.content}
                 publishedAt={post.publishedAt}

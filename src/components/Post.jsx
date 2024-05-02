@@ -12,13 +12,19 @@ export function Post({ author, publishedAt, content }) {
         locale: ptBR
     });
 
+    const [newCommentText, setNewCommentText] = useState('');
+    function handleNewCommentChange() {
+        setNewCommentText(event.target.value);
+    }
+
     const [comments, setComments] = useState([
         'Muito bom!!! Parabéns!!!'
     ]);
     function handleCreateNewComment() {
         event.preventDefault();
 
-        setComments([...comments, comments.length++])
+        setComments([...comments, newCommentText]);
+        setNewCommentText('');
     }
 
     return (
@@ -50,6 +56,8 @@ export function Post({ author, publishedAt, content }) {
 
                 <textarea 
                     placeholder='Deixe um comentário'
+                    value={newCommentText}
+                    onChange={handleNewCommentChange}
                 />
 
                 <footer>

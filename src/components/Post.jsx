@@ -1,15 +1,25 @@
 import { formatDistanceToNow } from 'date-fns';
 import { ptBR } from 'date-fns/locale';
+import { useState } from 'react';
 
 import styles from './Post.module.css';
 import { Comment } from './Comment';
 import { Avatar } from './Avatar';
 
-// # Named Exports
 export function Post({ author, publishedAt, content }) {
+
     const publishedDateRange = formatDistanceToNow(publishedAt, {
         locale: ptBR
     });
+
+    const [comments, setComments] = useState([
+        'Muito bom!!! Parabéns!!!'
+    ]);
+    function handleCreateNewComment() {
+        event.preventDefault();
+
+        setComments([...comments, comments.length++])
+    }
 
     return (
         <article className={styles.post}>
@@ -35,7 +45,7 @@ export function Post({ author, publishedAt, content }) {
                 })}
             </div>
 
-            <form className={styles.commentForm}>
+            <form onSubmit={handleCreateNewComment} className={styles.commentForm}>
                 <strong>Deixe seu feedback</strong>
 
                 <textarea 
@@ -48,17 +58,10 @@ export function Post({ author, publishedAt, content }) {
             </form>
 
             <div className={styles.commentList}>
-                <Comment />
-                <Comment />
+                {comments.map(item => {
+                    return <Comment content={item} />
+                })}
             </div>
         </article>
     )
 }
-
-// # Default Exports: Permite alterar o nome do comp. na exportação;
-//
-// function Post() {
-//     return <p>Post</p>
-// }
-
-// export default Post

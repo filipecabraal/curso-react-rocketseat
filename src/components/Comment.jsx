@@ -6,7 +6,7 @@ import { Avatar } from './Avatar';
 const dateTime = new Date();
 const avatarImgUrl = "https://github.com/filipecabraal.png";
 
-export function Comment() {
+export function Comment({ content }) {
     return (
        <div className={styles.comment}>
             <Avatar hasBorder={false} src={avatarImgUrl} />
@@ -23,7 +23,7 @@ export function Comment() {
                             <Trash size={24} />
                         </button>
                     </header>
-                    <p>Muito bom!!! Parabéns!!!</p>
+                    <p>{content}</p>
                 </div>
 
                 <footer>

@@ -6,7 +6,11 @@ import { Avatar } from './Avatar';
 const dateTime = new Date();
 const avatarImgUrl = "https://github.com/filipecabraal.png";
 
-export function Comment({ content }) {
+export function Comment({ content, onDeleteComment }) {
+    function handleDeleteComment() {
+        onDeleteComment(content)
+    }
+
     return (
        <div className={styles.comment}>
             <Avatar hasBorder={false} src={avatarImgUrl} />
@@ -19,7 +23,7 @@ export function Comment({ content }) {
                             <time title={dateTime} dateTime={dateTime}>Cerca de 1h atrás</time>
                         </div>
 
-                        <button title='Deletar Comentário'>
+                        <button onClick={handleDeleteComment} title='Deletar Comentário'>
                             <Trash size={24} />
                         </button>
                     </header>

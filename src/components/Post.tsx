@@ -9,26 +9,30 @@ import { Avatar } from './Avatar';
 import styles from './Post.module.css';
 
 interface Author {
+    avatarUrl: string;
     name: string;
     role: string;
-    avatarUrl: string;
 }
 
 interface Content {
-    type: 'paragraph' | 'link';
+    type: string;
     content: string;
 }
 
-interface PostProps {
+export interface PostType {
     id?: number;
     author: Author;
     content: Content[];
     publishedAt: string
 }
 
-export function Post({ author, publishedAt, content }: PostProps) {
+interface PostProps {
+    post: PostType
+}
 
-    const publishedDateRange = formatDistanceToNow(publishedAt, {
+export function Post({ post }: PostProps) {
+
+    const publishedDateRange = formatDistanceToNow(post.publishedAt, {
         locale: ptBR
     });
 
@@ -68,20 +72,20 @@ export function Post({ author, publishedAt, content }: PostProps) {
         <article className={styles.post}>
             <header>
                 <div className={styles.author}>
-                    <Avatar src={author.avatarUrl} />
+                    <Avatar src={post.author.avatarUrl} />
                     <div className={styles.authorInfo}>
-                        <strong>{author.name}</strong>
-                        <span>{author.role}</span>
+                        <strong>{post.author.name}</strong>
+                        <span>{post.author.role}</span>
                     </div>
                 </div>
 
-                <time title={publishedAt} dateTime={publishedAt}>
+                <time title={post.publishedAt} dateTime={post.publishedAt}>
                     Publicado há {publishedDateRange}
                 </time>
             </header>
 
             <div className={styles.content}>
-                {content.map(item => {
+                {post.content.map(item => {
                     return item.type === "paragraph" ? 
                         <p key={item.content}>{item.content}</p> : 
                         <p key={item.content}><a href={item.content}>{item.content}</a></p>

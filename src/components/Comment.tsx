@@ -1,13 +1,20 @@
-import { ThumbsUp, Trash } from '@phosphor-icons/react';
-
-import styles from './Comment.module.css';
-import { Avatar } from './Avatar';
 import { useState } from 'react';
 
-const dateTime = new Date();
+import { ThumbsUp, Trash } from '@phosphor-icons/react';
+
+import { Avatar } from './Avatar';
+
+import styles from './Comment.module.css';
+
+interface CommentProps {
+    content: string;
+    onDeleteComment: (comment: string) => void;
+}
+
+const dateTime = new Date().toISOString();
 const avatarImgUrl = "https://github.com/filipecabraal.png";
 
-export function Comment({ content, onDeleteComment }) {
+export function Comment({ content, onDeleteComment }: CommentProps) {
     const [likeCount, setLikeCount] = useState(0);
 
     function handleDeleteComment() {
@@ -22,7 +29,7 @@ export function Comment({ content, onDeleteComment }) {
 
     return (
        <div className={styles.comment}>
-            <Avatar hasBorder={false} src={avatarImgUrl} />
+            <Avatar hasBorder={false} src={avatarImgUrl} alt="" />
 
             <div className={styles.commentBox}> 
                 <div className={styles.commentContent}>

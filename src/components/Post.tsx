@@ -1,46 +1,68 @@
+import { ChangeEvent, FormEvent, InvalidEvent, useState } from 'react';
+
 import { formatDistanceToNow } from 'date-fns';
 import { ptBR } from 'date-fns/locale';
-import { useState } from 'react';
 
-import styles from './Post.module.css';
 import { Comment } from './Comment';
 import { Avatar } from './Avatar';
 
-export function Post({ author, publishedAt, content }) {
+import styles from './Post.module.css';
+
+interface Author {
+    name: string;
+    role: string;
+    avatarUrl: string;
+}
+
+interface Content {
+    type: 'paragraph' | 'link';
+    content: string;
+}
+
+interface PostProps {
+    id?: number;
+    author: Author;
+    content: Content[];
+    publishedAt: string
+}
+
+export function Post({ author, publishedAt, content }: PostProps) {
 
     const publishedDateRange = formatDistanceToNow(publishedAt, {
         locale: ptBR
     });
 
     const [newCommentText, setNewCommentText] = useState('');
-    function handleNewCommentChange() {
-        event.target.setCustomValidity('');
-        setNewCommentText(event.target.value);
-    }
 
     const [comments, setComments] = useState([
         'Muito bom!!! Parabéns!!!'
     ]);
-    function handleCreateNewComment() {
+
+    const isNewCommentEmpty = newCommentText.length === 0;
+
+    function handleCreateNewComment(event: FormEvent) {
         event.preventDefault();
 
         setComments([...comments, newCommentText]);
         setNewCommentText('');
     }
 
-    function handleNewCommentInvalid() {
+    function handleNewCommentChange(event: ChangeEvent<HTMLTextAreaElement>) {
+        event.target.setCustomValidity('');
+        setNewCommentText(event.target.value);
+    }
+
+    function handleNewCommentInvalid(event: InvalidEvent<HTMLTextAreaElement>) {
         event.target.setCustomValidity('Esse campo é obrigatório!');
     }
 
-    function deleteComment(commentToDelete) {
+    function deleteComment(commentToDelete: string) {
         const newComments = comments.filter(item => {
             return item !== commentToDelete
         });
 
         setComments(newComments);
     }
-
-    const isNewCommentEmpty = newCommentText.length === 0;
 
     return (
         <article className={styles.post}>

@@ -3,13 +3,9 @@ import { useState } from 'react';
 import { ThumbsUp, Trash } from '@phosphor-icons/react';
 
 import { Avatar } from './Avatar';
+import { CommentProps } from '../interfaces/Comment.interface'
 
 import styles from './Comment.module.css';
-
-interface CommentProps {
-    content: string;
-    onDeleteComment: (comment: string) => void;
-}
 
 const dateTime = new Date().toISOString();
 const avatarImgUrl = "https://github.com/filipecabraal.png";

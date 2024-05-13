@@ -35,9 +35,9 @@ export function Post({ post }: PostProps) {
     const publishedDateRange = formatDistanceToNow(post.publishedAt, {
         locale: ptBR
     });
-
+    
     const [newCommentText, setNewCommentText] = useState('');
-
+    
     const [comments, setComments] = useState([
         'Muito bom!!! Parabéns!!!'
     ]);
@@ -103,7 +103,7 @@ export function Post({ post }: PostProps) {
                     required
                 />
 
-                <footer>
+                <footer> 
                     <button type='submit' disabled={isNewCommentEmpty}>
                         Publicar
                     </button>

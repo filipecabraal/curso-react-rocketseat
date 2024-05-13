@@ -1,7 +1,8 @@
 import { PencilLine } from '@phosphor-icons/react';
 
-import styles from './Sidebar.module.css';
 import { Avatar } from './Avatar';
+
+import styles from './Sidebar.module.css';
 
 const avatarImgUrl = "https://github.com/filipecabraal.png";
 

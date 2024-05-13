@@ -4,7 +4,7 @@
         "author": {
             "avatarUrl": "https://github.com/filipecabraal.png",
             "name": "Filipe Cabral",
-            "role": "Web Developer"
+            "role": "Desenvolvedor Front-End"
         },
         "content": [
             { "type": "paragraph", "content": "Lorem ipsum!" },
@@ -16,14 +16,14 @@
     {
         "id": 2,
         "author": {
-            "avatarUrl": "https://github.com/sulco.png",
-            "name": "Tomek Sulkowski",
-            "role": "Software Engineer"
+            "avatarUrl": "https://github.com/jordwalke.png",
+            "name": "Jordan Walke",
+            "role": "Criador do React"
         },
         "content": [
             { "type": "paragraph", "content": "Lorem ipsum dolor sit amet!" },
             { "type": "paragraph", "content": "Etiam finibus, magna a dignissim fermentum, urna justo maximus felis, ac euismod ligula risus ut velit. Cras posuere velit ac mi aliquet, eu porta magna convallis. Nulla finibus dignissim libero eu blandit. Curabitur finibus posuere leo a aliquam. Nam commodo consequat dui, non posuere mi. Integer a libero in purus sodales euismod id a enim." },
-            { "type": "link", "content": "https://github.com/sulco" }
+            { "type": "link", "content": "https://github.com/jordwalke" }
         ],
         "publishedAt": "Tue Apr 29 2024 15:46:20 GMT-0300"
     }

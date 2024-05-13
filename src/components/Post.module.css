@@ -4,12 +4,11 @@
     padding: 2.5rem;
 }
 
-/* Estilização exclusiva pra elementos que tenham outro elemento igual anterior */
 .post + .post {
     margin-top: 2rem;
 }
 
-/* Estilização exclusiva para tag html que esteja na primeira camada do elemento pai */
+
 .post > header {
     display: flex;
     align-items: center;
@@ -90,7 +89,6 @@
     max-height: 0;
 }
 
-/* Focus em qualquer elemento que esteja dentro do elemento pai */
 .commentForm:focus-within footer {
     visibility: visible;
     max-height: none;

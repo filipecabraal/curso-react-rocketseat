@@ -1,30 +1,30 @@
-# React + TypeScript + Vite
+##### Rocketseat - Formação ReactJS
+### Nível 01: Fundamentos
+# Projeto Ignite Feed
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+O objetivo desse curso é revisitar a Lib React, relembrar conceitos, desenvolver técnicas e boas práticas.
 
-Currently, two official plugins are available:
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
 
-## Expanding the ESLint configuration
+### O que foi desenvolvido?
+Um projeto simulando um feed de uma rede social, com os seguintes requisitos e funcionalidades:
+- [x] Adicionar Comentários em um post
+- [x] Deletar Comentários
+- [x] Desabilitar o botão de publicar comentário, caso não tenha nada escrito no campo de texto
+- [x] Contabilizar quantidade de curtidas (aplausos) presente abaixo do comentário
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+### Conceitos utilizados
+Durante o curso foram abordados conceitos básicos do React como:
+- Componentes
+- Propriedades
+- Estado 
+- Imutabilidade
+- Hooks
 
-- Configure the top-level `parserOptions` property like this:
-
-```js
-export default {
-  // other rules...
-  parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-  },
-}
-```
-
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+## Melhorias
+Algumas melhorias foram implementadas, além do que foi passado no curso, como por exemplo:
+> - Uso de arquivo ".json" como mock, de forma externa na arquitetura do projeto, ao invés da criação no meio do corpo do componente React. Gerando assim um código mais limpo e disponibilizando esse arquivo de mock com as informações, para que caso precise, outro componente possa utilizar.
+> 
+> - Ajuste na forma que a estilização de FOCUS foi utilizada. No projeto original do curso, a estilização do focus em cima dos componentes visuais era disparado até mesmo quando um click era realizado.
+> 
+> - As Interfaces no projeto original do curso foram criadas dentro dos componentes React. Então foi ajustado para arquivos externos, deixando assim o código do componente mais limpo e disponibilizando o acesso a essas interfaces em todo projeto.

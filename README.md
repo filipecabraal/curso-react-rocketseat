@@ -4,6 +4,7 @@
 
 O objetivo desse curso é revisitar a Lib React, relembrar conceitos, desenvolver técnicas e boas práticas.
 
+![projeto-curso-rocketseat-feed](https://github.com/filipecabraal/curso-react-rocketseat/assets/25158348/ee1ede57-af83-4722-b531-13df06768b25)
 
 
 ### O que foi desenvolvido?

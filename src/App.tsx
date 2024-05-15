@@ -1,6 +1,7 @@
 import { Header } from './components/Header';
 import { Sidebar } from './components/Sidebar';
-import { Post, PostType } from './components/Post';
+import { Post } from './components/Post';
+import { PostType } from './interfaces/Post.interface'
 
 import postsMock from './mocks/posts.json'
 
